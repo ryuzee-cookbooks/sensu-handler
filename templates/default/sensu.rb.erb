@@ -1,0 +1,9 @@
+require 'chef-handler-sensu-event'
+option = Hash.new
+option[:server] = "<%= node['sensu-handler']['server'] %>"
+option[:port] = "<%= node['sensu-handler']['port'] %>"
+option[:severity] = <%= node['sensu-handler']['severity'] %>
+option[:handlers] = <%= node['sensu-handler']['handlers'] %>
+sensu_handler = Chef::Handler::SensuEvent.new(option)
+report_handlers << sensu_handler
+exception_handlers << sensu_handler
