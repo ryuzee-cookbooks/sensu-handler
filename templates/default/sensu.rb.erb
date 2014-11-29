@@ -1,4 +1,4 @@
-require 'chef-handler-sensu-event'
+require '/var/chef/handlers/chef-handler-sensu-event'
 option = Hash.new
 option[:server] = "<%= node['sensu-handler']['server'] %>"
 option[:port] = "<%= node['sensu-handler']['port'] %>"
