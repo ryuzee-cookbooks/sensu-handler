@@ -7,6 +7,13 @@
 # This software is released under the MIT License.
 # http://opensource.org/licenses/mit-license.php
 
+directory '/etc/chef/client.d' do
+  owner 'root'
+  group 'root'
+  mode 00755
+  action :create
+end
+
 template "/etc/chef/client.d/sensu.rb" do
   source "sensu.rb.erb"
   owner "root"
